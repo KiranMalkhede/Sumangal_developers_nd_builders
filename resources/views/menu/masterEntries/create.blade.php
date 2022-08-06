@@ -2,12 +2,12 @@
 
 <meta name="csrf-token" content="{{ csrf_token() }}">
 
-   <!-- CSS -->
-   <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+<!-- CSS -->
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
 
-   <!-- Script -->
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-   <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<!-- Script -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 
 @section('content')
     @include('include.header')
@@ -117,7 +117,7 @@
                                 <textarea name="add2" id="" cols="5" rows="0" class="form-control"></textarea>
                             </div>
                         </div>
-                            <hr>
+                        <hr>
                         <h4 class="text-center">Plot Details</h4>
                         <div class="row">
                             <div class="col-md-6">
@@ -131,6 +131,12 @@
                             <div class="col-md-6">
                                 <label for="" class="form-label">Select Layout</label>
                                 <input type="text" name="selectLayout" class="form-control">
+                                <select name="selectLayout" id="selectLayout-dropdown">
+                                    <option value="">select layout</option>
+                                    @foreach ($selectLayouts as $selectLayout)
+                                        <option value="{{ $selectLayout->id }}">{{ $selectLayout->selectLayout }}</option>
+                                    @endforeach
+                                </select>
                             </div>
                             <div class="col-md-6">
                                 <label for="" class="form-label">Comm. in Sqr. Ft.</label>
@@ -217,38 +223,37 @@
         @include('include.footer')
     </div>
     <script type="text/javascript">
-
         // CSRF Token
         var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
-        $(document).ready(function(){
-     
-          $( "#name" ).autocomplete({
-             source: function( request, response ) {
-                // Fetch data
-                $.ajax({
-                  url:"{{route('master.search')}}",
-                  type: 'get',
-                  dataType: "json",
-                  data: {
-                     _token: CSRF_TOKEN,
-                     search: request.term
-                  },
-                  success: function( data ) {
-                     response( data );
-                  }
-                });
-             },
-             select: function (event, ui) {
-               // Set selection
-               $('#name').val(ui.item.label); // display the selected text
-               $('#code').val(ui.item.value); // save selected id to input
-            //    $('#username').val(ui.item.value2); // save selected id to input
-            //    $('#email').val(ui.item.value3); // save selected id to input
-     
-               return false;
-             }
-          });
-     
+        $(document).ready(function() {
+
+            $("#name").autocomplete({
+                source: function(request, response) {
+                    // Fetch data
+                    $.ajax({
+                        url: "{{ route('master.search') }}",
+                        type: 'get',
+                        dataType: "json",
+                        data: {
+                            _token: CSRF_TOKEN,
+                            search: request.term
+                        },
+                        success: function(data) {
+                            response(data);
+                        }
+                    });
+                },
+                select: function(event, ui) {
+                    // Set selection
+                    $('#name').val(ui.item.label); // display the selected text
+                    $('#code').val(ui.item.value); // save selected id to input
+                    //    $('#username').val(ui.item.value2); // save selected id to input
+                    //    $('#email').val(ui.item.value3); // save selected id to input
+
+                    return false;
+                }
+            });
+
         });
-        </script>
+    </script>
 @endsection
