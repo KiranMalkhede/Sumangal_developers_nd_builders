@@ -29,6 +29,7 @@ class CreateExecutivesTable extends Migration
             $table->string('dob');
             $table->string('age');
             $table->string('qualitification');
+            $table->string('sex');
             $table->string('commision');
             $table->string('pan');
             $table->timestamps();

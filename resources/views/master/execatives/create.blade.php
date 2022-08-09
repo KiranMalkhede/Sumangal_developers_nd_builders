@@ -73,9 +73,17 @@
                                 <label for="" class="form-label">Age</label>
                                 <input type="text" name="age" class="form-control">
                             </div>
-                            <div class="col-md-12">
+                            <div class="col-md-6">
                                 <label for="" class="form-label">Qualification</label>
                                 <input type="text" name="qualitification" class="form-control">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="" class="form-label">Sex</label>
+                                <select class="form-select" name="sex" aria-label="Default select example">
+                                    <option selected>Open this select menu</option>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                </select>
                             </div>
                             <div class="col-md-6">
                                 <label for="" class="form-label">Commission</label>
