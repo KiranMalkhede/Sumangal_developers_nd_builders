@@ -144,6 +144,7 @@ class LayoutController extends Controller
         $execatives->dob = $request->dob;
         $execatives->age = $request->age;
         $execatives->qualitification = $request->qualitification;
+        $execatives->sex = $request->sex;
         $execatives->commision = $request->commision;
         $execatives->pan = $request->pan;
 
@@ -176,6 +177,7 @@ class LayoutController extends Controller
         $execatives->dob = $request->dob;
         $execatives->age = $request->age;
         $execatives->qualitification = $request->qualitification;
+        $execatives->sex = $request->sex;
         $execatives->commision = $request->commision;
         $execatives->pan = $request->pan;
         $execatives->save();
