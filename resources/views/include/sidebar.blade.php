@@ -199,8 +199,8 @@
            <div class="container main-nav">
                <div class="main-nav-start">
                    <div class="search-wrapper">
-                       <i data-feather="search" aria-hidden="true"></i>
-                       <input type="text" placeholder="Enter keywords ..." required>
+                       <i data-feather="search" aria-hidden="true" hidden></i>
+                       <input type="text" placeholder="Enter keywords ..." required hidden>
                    </div>
                </div>
                <div class="main-nav-end">

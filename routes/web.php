@@ -73,5 +73,9 @@ Route::get('/execative/show/{id}',[LayoutController::class,'exeShow'])->name('ex
 Route::delete('/execative/delete/{id}',[LayoutController::class,'exeDelete'])->name('execative.exeDelete');
 
 
+Route::get('/search',[LayoutController::class,'search'])->name('search');
+
+
+
 
 
