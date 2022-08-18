@@ -5,7 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Master;
 use App\Models\Executive;
+use App\Models\Layout;
 use App\helper\Helper;
+
+
 class MasterController extends Controller
 {
     public function master()
@@ -36,6 +39,26 @@ class MasterController extends Controller
            $response[] = array("label"=>$employee->name,"value"=>$employee->code);
         }
   
+        return response()->json($response);
+    }
+
+    public function searchPlot(Request $request)
+    {
+        $search = $request->search;
+
+        if($search == ''){
+            $plots = Layout::orderby('code','asc')->select('id','code','project','mouza','plot','khasara','phNo','land')->limit(5)->get();
+        }else{
+            $plots = Layout::orderby('code','asc')->select('id','code','project','mouza','plot','khasara','phNo','land')->where('project','like','%')->limit(5)->get();
+        }
+        
+        $response = array();
+        foreach($plots as $plot){
+            $response[] = array(
+                "value"=>$plot->project,"value3"=>$plot->land,"value1"=>$plot->plot,"value2"=>$plot->khasara,"value4"=>$plot->mouza,
+                "value5"=>$plot->phNo);
+                
+        }
         return response()->json($response);
     }
 
@@ -140,4 +163,7 @@ class MasterController extends Controller
             ->back()
             ->with('success_del', 'Deleted Successfully');
     }
+
+   
+
 }

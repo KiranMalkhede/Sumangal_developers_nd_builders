@@ -31,18 +31,27 @@
                        </a>
                        <ul class="cat-sub-menu">
                            <li>
-                               <a href="{{route('master_Entries')}}">Master Entries</a>
+                               <a href="{{ route('master_Entries') }}">Master Entries</a>
                            </li>
                            <li>
-                               <a href="{{route('transaction')}}">Transactions</a>
+                               <a href="{{ route('transaction') }}">Transactions</a>
                            </li>
                            <li>
-                               <a href="{{route('reports')}}">Reports</a>
+                               <a href="{{ route('reports') }}">Reports</a>
                            <li>
-                               <a href="{{route('admin')}}">Admin</a>
+                               <a href="{{ route('admin') }}">Admin</a>
                            </li>
                            <li>
-                               <a href="{{route('birthReport')}}">Birthday Report</a>
+                               <a href="{{ url('landownerdetails') }}">Land Owners Details</a>
+                           </li>
+                           <li>
+                            <a href="{{ url('advisor_promotion') }}">Advisor's Promotion</a>
+                        </li>
+                           <li>
+                               <a href="{{ url('receiptDetails') }}">Receipt Details</a>
+                           </li>
+                           <li>
+                               <a href="{{ route('birthReport') }}">Birthday Report</a>
                            </li>
                    </li>
                </ul>
@@ -62,6 +71,7 @@
                        <li>
                            <a href="{{ route('execative.exeIndex') }}">Executive Master</a>
                        </li>
+                      
                        <li>
                            <a href="categories.html">Registration</a>
                        </li>
@@ -76,9 +86,9 @@
                        </span>
                    </a>
                    <ul class="cat-sub-menu">
-                       <li>
-                           <a href="media-01.html">User Management</a>
-                       </li>
+                    <li>
+                        <a href="{{ url('monthly') }}">Monthly Business</a>
+                    </li>
                        <li>
                            <a href="media-02.html">Set User Privileges</a>
                        </li>
@@ -110,18 +120,18 @@
                </li>
                <li>
                    <a class="show-cat-btn" href="##">
-                       <span class="icon paper" aria-hidden="true"></span>Pages
+                       <span class="icon paper" aria-hidden="true"></span>Reports
                        <span class="category__btn transparent-btn" title="Open list">
                            <span class="sr-only">Open list</span>
                            <span class="icon arrow-down" aria-hidden="true"></span>
                        </span>
                    </a>
                    <ul class="cat-sub-menu">
+                    <li>
+                        <a href="{{ url('daily_sales') }}">Daily Sales Reports</a>
+                    </li>
                        <li>
-                           <a href="pages.html">All pages</a>
-                       </li>
-                       <li>
-                           <a href="new-page.html">Add new page</a>
+                           <a href="{{ url('customers_details') }}">Customer's Details</a>
                        </li>
                    </ul>
                </li>

@@ -130,85 +130,80 @@
                             </div>
                             <div class="col-md-6">
                                 <label for="" class="form-label">Select Layout</label>
-                                <input type="text" name="selectLayout" class="form-control">
-                                <select name="selectLayout" id="selectLayout-dropdown">
-                                    <option value="">select layout</option>
-                                    @foreach ($selectLayouts as $selectLayout)
-                                        <option value="{{ $selectLayout->id }}">{{ $selectLayout->selectLayout }}</option>
-                                    @endforeach
-                                </select>
+                                <input type="text" name="selectLayout" class="form-control"
+                                    id="project">
                             </div>
                             <div class="col-md-6">
                                 <label for="" class="form-label">Comm. in Sqr. Ft.</label>
-                                <input type="text" name="sqrFt" class="form-control">
+                                <input type="text" name="sqrFt" class="form-control" id="sqrFt">
                             </div>
                             <div class="col-md-6">
                                 <label for="" class="form-label">Plot No.</label>
-                                <input type="text" name="plotNo" class="form-control">
+                                <input type="text" name="plotNo" class="form-control" id="plotNo">
                             </div>
                             <div class="col-md-6">
                                 <label for="" class="form-label">Khasara No.</label>
-                                <input type="text" name="khasaraNo" class="form-control">
+                                <input type="text" name="khasaraNo" class="form-control" id="khasaraNo">
                             </div>
                             <div class="col-md-6">
                                 <label for="" class="form-label">Sqr Ft.</label>
-                                <input type="text" name="sqrFt2" class="form-control">
+                                <input type="text" name="sqrFt2" class="form-control" id="sqrFt2">
                             </div>
                             <div class="col-md-6">
                                 <label for="" class="form-label">Mouza</label>
-                                <input type="text" name="mouza" class="form-control">
+                                <input type="text" name="mouza" class="form-control" id="mouza">
                             </div>
                             <div class="col-md-6">
                                 <label for="" class="form-label">P.H.No.</label>
-                                <input type="text" name="phNo" class="form-control">
+                                <input type="text" name="phNo" class="form-control" id="phNo">
                             </div>
                             <div class="col-md-6">
                                 <label for="" class="form-label">Size</label>
-                                <input type="text" name="size" class="form-control">
+                                <input type="text" name="size" class="form-control" id="size">
                             </div>
                             <div class="">
                                 <label for="" class="form-label">Other Detail</label>
-                                <input type="text" name="otherDetail" class="form-control">
+                                <input type="text" name="otherDetail" class="form-control" id="otherDetail">
                             </div>
                             <div class="col-md-6">
                                 <label for="" class="form-label">Sale Rate</label>
-                                <input type="text" name="saleRate" class="form-control">
+                                <input type="text" name="saleRate" class="form-control" id="saleRate">
                             </div>
                             <div class="col-md-6">
                                 <label for="" class="form-label">Total Plot Cost</label>
-                                <input type="text" name="totalPlotC" class="form-control">
+                                <input type="text" name="totalPlotC" class="form-control" id="totalPlotC">
                             </div>
                             <div class="col-md-6">
                                 <label for="" class="form-label">Company Rate</label>
-                                <input type="text" name="ComRate" class="form-control">
+                                <input type="text" name="ComRate" class="form-control" id="ComRate">
                             </div>
                             <div class="col-md-6">
                                 <label for="" class="form-label">Net Plot Cost</label>
-                                <input type="text" name="netPlotCost" class="form-control">
+                                <input type="text" name="netPlotCost" class="form-control" id="netPlotCost">
                             </div>
                             <div class="col-md-6">
                                 <label for="" class="form-label">No. of Installments</label>
-                                <input type="text" name="noInstall" class="form-control">
+                                <input type="text" name="noInstall" class="form-control" id="noInstall">
                             </div>
                             <div class="col-md-6">
                                 <label for="" class="form-label">Down-Payment</label>
-                                <input type="text" name="downPay" class="form-control">
+                                <input type="text" name="downPay" class="form-control" id="downPay">
                             </div>
                             <div class="col-md-3">
                                 <label for="" class="form-label">Installment From</label>
-                                <input type="date" name="instalFrom" class="form-control">
+                                <input type="date" name="instalFrom" class="form-control" id="instalFrom">
                             </div>
                             <div class="col-md-3">
                                 <label for="" class="form-label">To</label>
-                                <input type="date" name="installTo" class="form-control">
+                                <input type="date" name="installTo" class="form-control" id="installTo">
                             </div>
                             <div class="col-md-3">
                                 <label for="" class="form-label">Dp</label>
-                                <input type="text" name="dp" class="form-control">
+                                <input type="text" name="dp" class="form-control" id="dp">
                             </div>
                             <div class="col-md-3">
                                 <label for="" class="form-label">Mon. Install</label>
-                                <input type="text" name="monInstall" class="form-control">
+                                <input type="text" name="monInstall" class="form-control" id="monInstall">
                             </div>
                         </div>
                         <div class="form-group py-3">
@@ -222,6 +217,43 @@
     <div class="py-5">
         @include('include.footer')
     </div>
+    <script type="text/javascript">
+        // CSRF Token
+        var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+        $(document).ready(function() {
+
+            $("#project").autocomplete({
+                source: function(request, response) {
+                    // Fetch data
+                    $.ajax({
+                        url: "{{ route('master.searchplot') }}",
+                        type: 'get',
+                        dataType: "json",
+                        data: {
+                            _token: CSRF_TOKEN,
+                            search: request.term
+                        },
+                        success: function(data) {
+                            response(data);
+                        }
+                    });
+                },
+                select: function(event, ui) {
+                    // Set selection
+                    $('#project').val(ui.item.value); // display the selected text
+                    // $('#project').val(ui.item.label); // display the selected text
+                    $('#plotNo').val(ui.item.value1);
+                    $('#khasaraNo').val(ui.item.value2);
+                    $('#sqrFt2').val(ui.item.value3);
+                    $('#mouza').val(ui.item.value4);
+                    $('#phNo').val(ui.item.value5);
+
+                    return false;
+                }
+            });
+
+        });
+    </script>
     <script type="text/javascript">
         // CSRF Token
         var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');

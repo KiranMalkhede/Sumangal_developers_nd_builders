@@ -163,7 +163,6 @@ class LayoutController extends Controller
     public function exeUpdate(Request $request, $id)
     {
         $execatives = Executive::find($id);
-        $execatives->exe_id = $exe_id;
         $execatives->code = $request->code;
         $execatives->joiningDate = $request->joiningDate;
         $execatives->sponsorCode = $request->sponsorCode;
