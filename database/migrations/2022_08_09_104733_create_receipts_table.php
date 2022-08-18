@@ -15,24 +15,24 @@ class CreateReceiptsTable extends Migration
     {
         Schema::create('receipts', function (Blueprint $table) {
             $table->id();
-            $table->string('receiptNo');
-            $table->string('receiptDate');
-            $table->string('giver');
-            $table->string('layout');
-            $table->string('mouza');
-            $table->string('khasara');
-            $table->string('plot_no');
-            $table->string('size');
-            $table->string('type');
-            $table->string('ex_details');
-            $table->string('amount_received');
-            $table->string('on_ac_of');
-            $table->string('tokenExpDate');
-            $table->string('month');
-            $table->string('mode_of_pay');
-            $table->string('cheque_no');
-            $table->string('cheque_date');
-            $table->string('bank_name');
+            $table->string('receiptNo')->nullable();
+            $table->string('receiptDate')->nullable();
+            $table->string('giver')->nullable();
+            $table->string('layout')->nullable();
+            $table->string('mouza')->nullable();
+            $table->string('khasara')->nullable();
+            $table->string('plot_no')->nullable();
+            $table->string('size')->nullable();
+            $table->string('type')->nullable();
+            $table->string('ex_details')->nullable();
+            $table->string('amount_received')->nullable();
+            $table->string('on_ac_of')->nullable();
+            $table->string('tokenExpDate')->nullable();
+            $table->string('month')->nullable();
+            $table->string('mode_of_pay')->nullable();
+            $table->string('cheque_no')->nullable();
+            $table->string('cheque_date')->nullable();
+            $table->string('bank_name')->nullable();
 
             $table->timestamps();
         });

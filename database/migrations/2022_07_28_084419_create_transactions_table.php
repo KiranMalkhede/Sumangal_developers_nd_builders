@@ -15,11 +15,11 @@ class CreateTransactionsTable extends Migration
     {
         Schema::create('transactions', function (Blueprint $table) {
             $table->id();
-            $table->string('srNo');
-            $table->string('exeNo');
-            $table->string('name');
-            $table->string('date');
-            $table->string('comm');
+            $table->string('srNo')->nullable();
+            $table->string('exeNo')->nullable();
+            $table->string('name')->nullable();
+            $table->string('date')->nullable();
+            $table->string('comm')->nullable();
             $table->timestamps();
         });
     }

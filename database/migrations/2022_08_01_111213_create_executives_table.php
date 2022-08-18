@@ -15,23 +15,23 @@ class CreateExecutivesTable extends Migration
     {
         Schema::create('executives', function (Blueprint $table) {
             $table->id();
-            $table->string('exe_id');
-            $table->string('code');
-            $table->string('joiningDate');
-            $table->string('sponsorCode');
-            $table->string('name');
-            $table->string('sponsorName');
-            $table->string('email');
-            $table->string('add');
-            $table->string('phone');
-            $table->string('phone1');
-            $table->string('phone2');
-            $table->string('dob');
-            $table->string('age');
-            $table->string('qualitification');
-            $table->string('sex');
-            $table->string('commision');
-            $table->string('pan');
+            $table->string('exe_id')->nullable();
+            $table->string('code')->nullable();
+            $table->string('joiningDate')->nullable();
+            $table->string('sponsorCode')->nullable();
+            $table->string('name')->nullable();
+            $table->string('sponsorName')->nullable();
+            $table->string('email')->nullable();
+            $table->string('add')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('phone1')->nullable();
+            $table->string('phone2')->nullable();
+            $table->string('dob')->nullable();
+            $table->string('age')->nullable();
+            $table->string('qualitification')->nullable();
+            $table->string('sex')->nullable();
+            $table->string('commision')->nullable();
+            $table->string('pan')->nullable();
             $table->timestamps();
         });
     }

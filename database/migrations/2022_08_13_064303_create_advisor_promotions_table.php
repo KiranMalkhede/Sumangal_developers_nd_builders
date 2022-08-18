@@ -15,9 +15,9 @@ class CreateAdvisorPromotionsTable extends Migration
     {
         Schema::create('advisor_promotions', function (Blueprint $table) {
             $table->id();
-            $table->string('advisor');
-            $table->string('date');
-            $table->string('comm');
+            $table->string('advisor')->nullable();
+            $table->string('date')->nullable();
+            $table->string('comm')->nullable();
             $table->timestamps();
         });
     }

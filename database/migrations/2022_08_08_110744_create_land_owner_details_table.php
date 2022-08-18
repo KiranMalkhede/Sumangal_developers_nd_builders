@@ -15,17 +15,17 @@ class CreateLandOwnerDetailsTable extends Migration
     {
         Schema::create('land_owner_details', function (Blueprint $table) {
             $table->id();
-            $table->string('ownerName');
-            $table->string('address');
-            $table->string('contactDetail');
-            $table->string('contactDetail2');
-            $table->string('mouza');
-            $table->string('khasara');
-            $table->string('phNo');
-            $table->string('acres');
-            $table->string('perAcres');
-            $table->string('totalCost');
-            $table->string('payPeriod');
+            $table->string('ownerName')->nullable();
+            $table->string('address')->nullable();
+            $table->string('contactDetail')->nullable();
+            $table->string('contactDetail2')->nullable();
+            $table->string('mouza')->nullable();
+            $table->string('khasara')->nullable();
+            $table->string('phNo')->nullable();
+            $table->string('acres')->nullable();
+            $table->string('perAcres')->nullable();
+            $table->string('totalCost')->nullable();
+            $table->string('payPeriod')->nullable();
 
             $table->timestamps();
         });
