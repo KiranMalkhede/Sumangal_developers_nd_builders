@@ -14,7 +14,7 @@
             </div>
             <div class="card-body" style="background-color: rgb(168, 236, 236)">
                 <form action="">
-                    <div class="row g-3 align-items-center">
+                    <div class="row g-3 ">
                         <div class="col-auto">
                             <label for="inputPassword6" class="col-form-label">Reg.No</label>
                         </div>
@@ -30,7 +30,7 @@
                                 aria-describedby="passwordHelpInline">
                         </div>
                     </div>
-                    <div class="row g-3 align-items-center mt-2">
+                    <div class="row g-3  mt-2">
                         <div class="col-auto">
                             <label for="inputPassword6" class="col-form-label">Purchaser's name</label>
                         </div>
@@ -39,7 +39,7 @@
                                 aria-describedby="passwordHelpInline">
                         </div>
                     </div>
-                    <div class="row g-3 align-items-center mt-2">
+                    <div class="row g-3  mt-2">
                         <div class="col-auto">
                             <label for="inputPassword6" class="col-form-label">Address </label>
                         </div>
@@ -49,7 +49,7 @@
                         </div>
                     </div>
                     <hr>
-                    <div class="row g-3 align-items-center mt-2">
+                    <div class="row g-3  mt-2">
                         <div class="col-auto">
                             <label for="inputPassword6" class="col-form-label">Executive name</label>
                         </div>
@@ -66,7 +66,7 @@
                         </div>
                     </div>
                     <hr>
-                    <div class="row g-3 align-items-center">
+                    <div class="row g-3 ">
                         <div class="col-auto">
                             <label for="inputPassword6" class="col-form-label">Mouza</label>
                         </div>
@@ -89,7 +89,7 @@
                                 aria-describedby="passwordHelpInline">
                         </div>
                     </div>
-                    <div class="row g-3 align-items-center mt-1">
+                    <div class="row g-3  mt-1">
                         <div class="col-auto">
                             <label for="inputPassword6" class="col-form-label">Plot Cost</label>
                         </div>

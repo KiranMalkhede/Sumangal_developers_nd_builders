@@ -115,7 +115,7 @@ class LayoutController extends Controller
             ->with('success_del', 'Deleted Successfully');
     }
 
-    //Execative
+    //Executive
     public function exeIndex()
     {
         $execatives = Executive::all();
@@ -127,7 +127,7 @@ class LayoutController extends Controller
     }
     public function exeStore(Request $request)
     {
-        $exe_id = Helper::IDGeneratorExe(new Layout(), 'exe_id', 5, 'EXE');
+        $exe_id = Helper::IDGeneratorExe(new Executive(), 'exe_id', 5, 'EXE');
 
         $execatives = new Executive();
         $execatives->exe_id = $exe_id;

@@ -2,11 +2,11 @@
    <aside class="sidebar">
        <div class="sidebar-start">
            <div class="sidebar-head">
-               <a href="/" class="logo-wrapper" title="Home">
+               <a href="{{url('/home')}}" class="logo-wrapper" title="Home">
                    <span class="sr-only">Home</span>
                    <span class="icon logo" aria-hidden="true"></span>
                    <div class="logo-text">
-                       <span class="logo-title">Elegant</span>
+                       <span class="logo-title">Sumangal </span>
                        <span class="logo-subtitle">Dashboard</span>
                    </div>
 
@@ -33,14 +33,14 @@
                            <li>
                                <a href="{{ route('master_Entries') }}">Master Entries</a>
                            </li>
-                           <li>
+                           {{-- <li>
                                <a href="{{ route('transaction') }}">Transactions</a>
                            </li>
                            <li>
                                <a href="{{ route('reports') }}">Reports</a>
                            <li>
                                <a href="{{ route('admin') }}">Admin</a>
-                           </li>
+                           </li> --}}
                            <li>
                                <a href="{{ url('landownerdetails') }}">Land Owners Details</a>
                            </li>
@@ -50,9 +50,9 @@
                            <li>
                                <a href="{{ url('receiptDetails') }}">Receipt Details</a>
                            </li>
-                           <li>
+                           {{-- <li>
                                <a href="{{ route('birthReport') }}">Birthday Report</a>
-                           </li>
+                           </li> --}}
                    </li>
                </ul>
                </li>
@@ -70,11 +70,10 @@
                        </li>
                        <li>
                            <a href="{{ route('execative.exeIndex') }}">Executive Master</a>
-                       </li>
-                      
-                       <li>
+                       </li>                      
+                       {{-- <li>
                            <a href="categories.html">Registration</a>
-                       </li>
+                       </li> --}}
                    </ul>
                </li>
                <li>
@@ -89,7 +88,7 @@
                     <li>
                         <a href="{{ url('monthly') }}">Monthly Business</a>
                     </li>
-                       <li>
+                       {{-- <li>
                            <a href="media-02.html">Set User Privileges</a>
                        </li>
                        <li>
@@ -100,7 +99,7 @@
                        </li>
                        <li>
                            <a href="media-02.html">Error Handler</a>
-                       </li>
+                       </li>Elegant
                        <li>
                            <a href="media-02.html">TDS Master</a>
                        </li>
@@ -115,7 +114,7 @@
                        </li>
                        <li>
                            <a href="media-02.html">Backup</a>
-                       </li>
+                       </li> --}}
                    </ul>
                </li>
                <li>
@@ -135,7 +134,7 @@
                        </li>
                    </ul>
                </li>
-               <li>
+               {{-- <li>
                    <a href="comments.html">
                        <span class="icon message" aria-hidden="true"></span>
                        Comments
@@ -185,7 +184,7 @@
                    <li>
                        <a href="##"><span class="icon setting" aria-hidden="true"></span>Settings</a>
                    </li>
-               </ul>
+               </ul> --}}
            </div>
        </div>
        <div class="sidebar-footer">
@@ -193,12 +192,12 @@
                <span class="sidebar-user-img">
                    <picture>
                        <source srcset="./img/avatar/avatar-illustrated-01.webp" type="image/webp"><img
-                           src="./img/avatar/avatar-illustrated-01.png" alt="User name">
+                           src="./img/avatar/avatar-illustrated-01.png" alt="{{ auth()->user()->name }}">
                    </picture>
                </span>
                <div class="sidebar-user-info">
-                   <span class="sidebar-user__title">Nafisa Sh.</span>
-                   <span class="sidebar-user__subtitle">Support manager</span>
+                   <span class="sidebar-user__title">{{ auth()->user()->name }}</span>
+                   <span class="sidebar-user__subtitle">Super Admin</span>
                </div>
            </a>
        </div>
@@ -289,7 +288,7 @@
                            <span class="nav-user-img">
                                <picture>
                                    <source srcset="./img/avatar/avatar-illustrated-02.webp" type="image/webp">
-                                   <img src="./img/avatar/avatar-illustrated-02.png" alt="User name">
+                                   <img src="./img/avatar/avatar-illustrated-02.png" alt="{{ auth()->user()->name }}">
                                </picture>
                            </span>
                        </button>

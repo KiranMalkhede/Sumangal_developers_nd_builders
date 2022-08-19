@@ -65,13 +65,13 @@ Route::post('/layout/edit/update/{id}',[LayoutController::class,'update'])->name
 Route::get('/layout/show/{id}',[LayoutController::class,'show'])->name('layout.show');
 Route::delete('/layout/delete/{id}',[LayoutController::class,'delete'])->name('layout.delete');
 
-Route::get('/execative',[LayoutController::class,'exeIndex'])->name('execative.exeIndex');
-Route::get('/execative/create',[LayoutController::class,'exeCreate'])->name('execative.exeCreate');
-Route::post('/execative/store',[LayoutController::class,'exeStore'])->name('execative.exeStore');
-Route::get('/execative/edit/{id}',[LayoutController::class,'exeEdit'])->name('execative.exeEdit');
-Route::post('/execative/edit/update/{id}',[LayoutController::class,'exeUpdate'])->name('execative.exeUpdate');
-Route::get('/execative/show/{id}',[LayoutController::class,'exeShow'])->name('execative.exeShow');
-Route::delete('/execative/delete/{id}',[LayoutController::class,'exeDelete'])->name('execative.exeDelete');
+Route::get('/executive',[LayoutController::class,'exeIndex'])->name('execative.exeIndex');
+Route::get('/executive/create',[LayoutController::class,'exeCreate'])->name('execative.exeCreate');
+Route::post('/executive/store',[LayoutController::class,'exeStore'])->name('execative.exeStore');
+Route::get('/executive/edit/{id}',[LayoutController::class,'exeEdit'])->name('execative.exeEdit');
+Route::post('/executive/edit/update/{id}',[LayoutController::class,'exeUpdate'])->name('execative.exeUpdate');
+Route::get('/executive/show/{id}',[LayoutController::class,'exeShow'])->name('execative.exeShow');
+Route::delete('/executive/delete/{id}',[LayoutController::class,'exeDelete'])->name('execative.exeDelete');
 
 
 Route::get('/search',[LayoutController::class,'search'])->name('search');
